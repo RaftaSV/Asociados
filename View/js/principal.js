@@ -374,15 +374,7 @@ function Eliminar() {
                                 CargarDatos()
                             }, 250);
 
-                            document.getElementById('id').value = "";
-                            document.getElementById('pNombre').value = "";
-                            document.getElementById('sNombre').value = "";
-                            document.getElementById('pApellido').value = "";
-                            document.getElementById('sApellido').value = "";
-                            document.getElementById('telefono').value = "";
-                            document.getElementById('direccion').value = "";
-
-
+                            limpiar();
 
                             break;
 
