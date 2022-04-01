@@ -1,0 +1,211 @@
+#contenedor {
+    height: 98%;
+}
+
+#textoEncabezado {
+    margin-left: 26%;
+    position: absolute;
+}
+
+#imagenEncabezado {
+    color: #F5EFED;
+    background-image: url("imagenes/Logo.png");
+    background-size: 68%;
+    width: 15%;
+    height: 20%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+#buscarDUI {
+    margin-top: 65%;
+    margin-left: 17%;
+    width: 70%;
+    position: absolute;
+}
+
+body {
+    background-image: url("imagenes/fondoMaterial.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+table {
+    background-color: rgba(70, 73, 72, 0.075);
+    font-size: medium;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#divTabla {
+    overflow-x: hidden;
+    overflow: scroll;
+    display: inline-block;
+    background-color: rgba(70, 73, 72, 0.075);
+    width: 95%;
+    height: 72%;
+    margin-left: 2%;
+    margin-top: 1%;
+    position: absolute;
+}
+
+#EDITAR {
+    background-color: rgba(70, 73, 72, 0.075);
+    position: relative;
+    margin-top: 9%;
+    margin-left: 90%;
+}
+
+input {
+    border-radius: 20px;
+}
+
+.crud {
+    color: white;
+    font-weight: bold;
+    background-color: rgba(45, 48, 47, 0.075);
+    position: absolute;
+    display: inline-block;
+    width: 29%;
+    margin-top: 1%;
+    margin-left: 71%;
+    height: 310px;
+}
+
+.Confirmar {
+    font-size: 16px;
+    /* Cambiar el tama�o de la tipografia */
+    text-transform: uppercase;
+    /* Texto en mayusculas */
+    font-weight: bold;
+    /* Fuente en negrita o bold */
+    color: #ffffff;
+    /* Color del texto */
+    border-radius: 5px;
+    /* Borde del boton */
+    letter-spacing: 2px;
+    /* Espacio entre letras */
+    background: rgb(19, 168, 206);
+    /* Color de fondo */
+    padding: 10px 10px;
+    /* Relleno del boton */
+    transition: all 300ms ease 0ms;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    border-radius: 20px;
+}
+
+.Confirmar:hover {
+    background-color: teal;
+    /* Color de fondo al pasar el cursor */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(7px);
+    cursor: pointer;
+}
+
+label {
+    color: white;
+    padding-bottom: 8px;
+}
+
+#pNombreL {
+    margin-left: 5%;
+}
+
+#sNombreL {
+    margin-left: 14%;
+}
+
+#pApellidoL {
+    margin-left: 5%;
+}
+
+#sApellidoL {
+    margin-left: 14%;
+}
+
+#duiL {
+    margin-left: 17%;
+}
+
+#telefonoL {
+    margin-left: 34%;
+}
+
+#direccionL {
+    margin-left: 14%;
+}
+
+#direccion {
+    border-radius: 20px;
+}
+
+#exit {
+    position: absolute;
+    display: inline-block;
+    margin-left: 96%;
+}
+
+#eliminar {
+    font-size: 16px;
+    /* Cambiar el tama�o de la tipografia */
+    text-transform: uppercase;
+    /* Texto en mayusculas */
+    font-weight: bold;
+    /* Fuente en negrita o bold */
+    color: #ffffff;
+    /* Color del texto */
+    border-radius: 5px;
+    /* Borde del boton */
+    letter-spacing: 2px;
+    /* Espacio entre letras */
+    background: rgb(236, 18, 18);
+    /* Color de fondo */
+    padding: 10px 10px;
+    /* Relleno del boton */
+    transition: all 300ms ease 0ms;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    border-radius: 20px;
+    margin-top: 5%;
+}
+
+#eliminar:hover {
+    background-color: rgb(219, 102, 23);
+    /* Color de fondo al pasar el cursor */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(7px);
+    cursor: pointer;
+}
+
+#historial {
+    font-size: 16px;
+    /* Cambiar el tama�o de la tipografia */
+    text-transform: uppercase;
+    /* Texto en mayusculas */
+    font-weight: bold;
+    /* Fuente en negrita o bold */
+    color: #ffffff;
+    /* Color del texto */
+    border-radius: 5px;
+    /* Borde del boton */
+    letter-spacing: 2px;
+    /* Espacio entre letras */
+    background: rgb(43, 187, 7);
+    /* Color de fondo */
+    padding: 10px 10px;
+    /* Relleno del boton */
+    transition: all 300ms ease 0ms;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    border-radius: 20px;
+}
+
+#historial:hover {
+    background-color: rgb(23, 219, 154);
+    /* Color de fondo al pasar el cursor */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(7px);
+    cursor: pointer;
+}

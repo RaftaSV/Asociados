@@ -1,0 +1,126 @@
+DROP DATABASE IF EXISTS asociados;
+CREATE DATABASE asociados; 
+USE
+    asociados;
+CREATE TABLE historiales(
+    idHistorial INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    primerNombre VARCHAR(30),
+    segundoNombre VARCHAR(30),
+    primerApellido VARCHAR(30),
+    segundoApellido VARCHAR(30),
+    DUI VARCHAR(10),
+    telefono varchar(10),
+    direccion varchar(100),
+    fecha DATE,
+    hora TIME,
+    idUsuario INT,
+    idAdmin INT
+); CREATE TABLE usuarios(
+    idUsuario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    primerNombre VARCHAR(30),
+    segundoNombre VARCHAR(30),
+    primerApellido VARCHAR(30),
+    segundoApellido VARCHAR(30),
+    DUI VARCHAR(10),
+    telefono VARCHAR(10),
+    direccion varchar(100),
+    estado INT
+); CREATE TABLE administradores(
+    idAdmin INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nombreAdmin VARCHAR(20),
+    pass VARCHAR(512)
+); ALTER TABLE
+    historiales ADD FOREIGN KEY(idUsuario) REFERENCES usuarios(idUsuario);
+ALTER TABLE
+    historiales ADD FOREIGN KEY(idAdmin) REFERENCES administradores(idAdmin);
+
+insert into administradores(nombreAdmin,pass) values ('Rafa',sha2('ACACYPAC',512));
+INSERT INTO `usuarios`( `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `DUI`, `telefono`, `direccion`, `estado`) VALUES ('Rafael','Antonio','Gonzalez','Portillo','05408734-7','6311-4859','Caserio El Conacastillo,Nueva Concepcion','0');
+
+DELIMITER $$
+CREATE PROCEDURE SP_LOGIN(IN pUser varchar(30),IN pPass VARCHAR(30)) BEGIN SELECT * from administradores a where a.nombreAdmin=pUser and a.pass=sha2(pPass,512);
+END$$ 
+
+DELIMITER ; 
+
+DELIMITER $$
+CREATE PROCEDURE SP_S_USER(IN pDUI varchar(13))
+BEGIN 
+select * from usuarios  where  DUI like concat("%",pDUI,"%") and estado=0 limit 0,13;
+END$$ 
+
+DELIMITER ; 
+
+DELIMITER $$
+CREATE PROCEDURE SP_I_USER(IN pPNombre varchar(30),IN pSNombre varchar(30),IN pPApellido varchar(30),IN pSApellido varchar(30),
+IN pDUI varchar(13),IN pTelefono varchar(10),IN pDireccion varchar(100))
+BEGIN 
+INSERT INTO usuarios( primerNombre, segundoNombre, primerApellido, segundoApellido, DUI, telefono, direccion, estado) VALUES (
+   pPNombre,pSNombre,pPApellido,pSApellido,pDUI,pTelefono,pDireccion,0);
+
+END$$ 
+
+DELIMITER ; 
+
+DELIMITER $$
+CREATE PROCEDURE SP_U_USER(IN pId int,IN pPNombre varchar(30),IN pSNombre varchar(30),IN pPApellido varchar(30),IN pSApellido varchar(30),IN pDUI varchar(13),IN pTelefono varchar(10),IN pDireccion varchar(100),IN pAdmin int)
+BEGIN 
+DECLARE pNombre varchar(30);
+DECLARE sNombre varchar(30);
+DECLARE pApellido varchar(30);
+DECLARE sApellido varchar (30);
+DECLARE vDUI varchar(10);
+DECLARE vTelefono varchar(10);
+DECLARE vDireccion varchar(100);
+set pNombre =(SELECT primerNombre from usuarios WHERE idUsuario= pId);
+set sNombre =(SELECT segundoNombre from usuarios WHERE idUsuario= pId);
+set pApellido =(SELECT primerApellido from usuarios WHERE idUsuario= pId);
+set sApellido =(SELECT segundoApellido from usuarios WHERE idUsuario= pId);
+set vDUI =(SELECT DUI from usuarios WHERE idUsuario= pId);
+set vTelefono =(SELECT telefono from usuarios WHERE idUsuario= pId);
+set vDireccion =(SELECT direccion from usuarios WHERE idUsuario= pId);
+
+INSERT INTO historiales(primerNombre, segundoNombre, primerApellido, segundoApellido, DUI,telefono,direccion,fecha,hora, idUsuario, idAdmin) VALUES ( pNombre, sNombre, pApellido,sApellido,vDUI,vTelefono,vDireccion,now(),CURTIME(),pId,pAdmin);
+
+UPDATE usuarios SET primerNombre=pPNombre,segundoNombre=pSNombre,primerApellido=pPApellido,segundoApellido=pSApellido,DUI=pDUI,telefono=pTelefono,direccion=pDireccion WHERE idUsuario=pId;
+
+
+END$$ 
+
+DELIMITER ; 
+
+
+DELIMITER $$
+CREATE PROCEDURE SP_D_USER(IN pId int)
+BEGIN 
+UPDATE usuarios SET estado=1 WHERE idUsuario=pId;
+
+
+END$$ 
+
+DELIMITER ; 
+
+
+DELIMITER $$
+CREATE PROCEDURE SP_S_RECORD(IN pId int)
+BEGIN 
+SELECT a.primerNombre,a.segundoNombre,a.primerApellido,a.segundoApellido,a.DUI,a.telefono,a.direccion,a.fecha,a.hora,c.nombreAdmin from historiales a inner join usuarios b on a.idUsuario = b.idUsuario
+inner join administradores c on a.idAdmin = c.idAdmin WHERE a.idUsuario = pId;
+
+
+END$$ 
+
+DELIMITER ; 
+
+
+DELIMITER $$
+CREATE PROCEDURE SP_S_DATA(IN pId int)
+BEGIN 
+SELECT *from usuarios where idUsuario = pId;
+
+
+END$$ 
+
+DELIMITER ; 
+
+
