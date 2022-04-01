@@ -35,7 +35,7 @@ ALTER TABLE
     historiales ADD FOREIGN KEY(idAdmin) REFERENCES administradores(idAdmin);
 
 insert into administradores(nombreAdmin,pass) values ('Rafa',sha2('ACACYPAC',512));
-INSERT INTO `usuarios`( `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `DUI`, `telefono`, `direccion`, `estado`) VALUES ('Rafael','Antonio','Gonzalez','Portillo','05408734-7','6311-4859','Caserio El Conacastillo,Nueva Concepcion','0');
+INSERT INTO `usuarios`( `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `DUI`, `telefono`, `direccion`, `estado`) VALUES ('Rafael','Antonio','Gonzalez','Portillo','054087347','63114859','Caserio El Conacastillo,Nueva Concepcion','0');
 
 DELIMITER $$
 CREATE PROCEDURE SP_LOGIN(IN pUser varchar(30),IN pPass VARCHAR(30)) BEGIN SELECT * from administradores a where a.nombreAdmin=pUser and a.pass=sha2(pPass,512);
