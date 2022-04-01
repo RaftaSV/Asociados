@@ -379,7 +379,6 @@ function Eliminar() {
                             document.getElementById('sNombre').value = "";
                             document.getElementById('pApellido').value = "";
                             document.getElementById('sApellido').value = "";
-                            document.getElementById('dui').value = "";
                             document.getElementById('telefono').value = "";
                             document.getElementById('direccion').value = "";
 
@@ -397,7 +396,7 @@ function Eliminar() {
 }
 
 function Historial() {
-    let idUsuario, pNombre, sNombre, pApellido, sApellido, DUI, telefono, direccion;
+    let idUsuario;
     idUsuario = document.getElementById('id').value;
     pNombre = document.getElementById('pNombre').value;
 
@@ -459,6 +458,7 @@ function Historial() {
 
     limpiar();
 }
+
 
 
 function buscar() {

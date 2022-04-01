@@ -93,13 +93,15 @@
                         <label id="pNombreL" >PRIMER NOMBRE</label> <label id="sNombreL"> SEGUNGO NOMBRE</label>
                         <input type="text" id="pNombre"> <input type="text" id="sNombre"> <br>
 
-                        <label id="pApellidoL">PRIMER APELLIDO</label><label id="sApellidoL">SEGUNGO APELLIDO</label>
+                        <label id="pApellidoL">PRIMER APELLIDO</label><label id="sApellidoL">SEGUNDO APELLIDO</label>
 
                         <input type="text" id="pApellido"> <input type="text" id="sApellido"> <br>
 
-                        <label id="duiL">DUI</label> <label id="telefonoL">TELEFONO</label> <br>
+                        <label id="duiL">DUI</label> <label id="telefonoL" >TELEFONO</label> <br>
 
-                        <input type="text" id="dui">  <input type="text" id="telefono"> <br>
+                        <input id="dui" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "9">  
+    
+    <input id="telefono" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "8">  <br>
 
                         <label id="direccionL">DIRECCION</label>
 

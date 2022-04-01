@@ -26,7 +26,7 @@ $idAdmin = $_SESSION["idAdmin"];
 <body>
 
 <div id='container'>
-    <form action="/Asociados1/Controller/controllerLogin.php" method="post">
+    <form action="../Controller/controllerLogin.php" method="post">
 
         <div id="img"></div>
         <div class="inset">
