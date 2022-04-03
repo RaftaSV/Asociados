@@ -35,6 +35,9 @@ function CargarDatos() {
            <td> ${item.DUI}</td>
            <td> ${item.telefono}</td>
            <td> ${item.direccion}</td>
+           <td>
+           <button onclick="Historial(${item.idUsuario})" class="btn btn-info"> <i class="fa-solid fa-clock-rotate-left"></i> </button>
+           </td>
            </tr>
        `
             }
@@ -387,9 +390,8 @@ function Eliminar() {
     }
 }
 
-function Historial() {
-    let idUsuario;
-    idUsuario = document.getElementById('id').value;
+function Historial(idUsuario) {
+
     pNombre = document.getElementById('pNombre').value;
 
     if (idUsuario > 0) {
@@ -456,4 +458,6 @@ function Historial() {
 function buscar() {
     CargarDatos();
 }
+
+
 window.onload = CargarDatos();

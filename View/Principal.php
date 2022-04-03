@@ -20,6 +20,7 @@
 <script type="text/javascript" src="js/principal.js"></script>
 <!--CDN font-awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+<script src="https://kit.fontawesome.com/38b3ee1f3c.js" crossorigin="anonymous"></script>
 <!-- CDN sweet Alert-->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -90,25 +91,24 @@
                    
                     <div  class="position-absolute">
                         <input type="hidden" id="id" value="0"> 
-                        <label id="pNombreL" >PRIMER NOMBRE</label> <label id="sNombreL"> SEGUNGO NOMBRE</label>
-                        <input type="text" id="pNombre"> <input type="text" id="sNombre"> <br>
+                       <span> <label id="pNombreL" >PRIMER NOMBRE</label> <label id="sNombreL"> SEGUNGO NOMBRE</label></span>
+                    <span><input type="text" id="pNombre"> <input type="text" id="sNombre"> <br></span>
 
-                        <label id="pApellidoL">PRIMER APELLIDO</label><label id="sApellidoL">SEGUNDO APELLIDO</label>
+                    <span>    <label id="pApellidoL">PRIMER APELLIDO</label><label id="sApellidoL">SEGUNDO APELLIDO</label></span>
 
-                        <input type="text" id="pApellido"> <input type="text" id="sApellido"> <br>
+                    <span>   <input type="text" id="pApellido"> <input type="text" id="sApellido"> <br></span>
 
-                        <label id="duiL">DUI</label> <label id="telefonoL" >TELEFONO</label> <br>
-
-                        <input id="dui" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "9">  
+                    <span>   <label id="duiL">DUI</label> <label id="telefonoL" >TELEFONO</label> <br></span>
+                    <span>
+                        <input id="dui" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "9"> </span>  
     
-    <input id="telefono" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "8">  <br>
+                        <span>  <input id="telefono" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "8">  <br></span>
 
                         <label id="direccionL">DIRECCION</label>
 
                         <br> <textarea  id="direccion"> </textarea ><br>
                         <br> 
-                        <button id="historial" onclick="Historial()">Historial cambios</button>
-                        <button class="Confirmar" onclick="Guardar()">Guardar</button> <br>
+                        <button class="Confirmar" onclick="Guardar()">Guardar</button>
                         <button id="eliminar" onclick="Eliminar()">Eliminar</button>
                     </div>
             </div>
