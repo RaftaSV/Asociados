@@ -5,7 +5,7 @@ pegarlo y ejecutarlo en una consulta en phpmyadmin
 
 el proyecto esta configurado con el usuario root
 contraseña ""
-en el puesrto 3300
+en el puerto 3300
 
 el Usuario para el loguin Rafa
 Contraseña ACACYPAC
