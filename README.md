@@ -7,5 +7,5 @@ el proyecto esta configurado con el usuario root
 contraseña ""
 en el puerto 3300
 
-el Usuario para el loguin Rafa
+el Usuario para el login Rafa
 Contraseña ACACYPAC
